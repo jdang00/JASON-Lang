@@ -1,8 +1,11 @@
 {
   "name": "jason-lang",
+  "publisher": "JustinADang",
   "displayName": "JASON Lang",
   "description": "Language Support for the JASON file format",
   "version": "0.0.1",
+  "repository": "https://github.com/jdang00/JASON-Lang",
+  "icon": "./jason.png",
   "engines": {
     "vscode": "^1.89.0"
   },
