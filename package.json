@@ -13,12 +13,12 @@
     "languages": [{
       "id": "jason",
       "aliases": ["JASON", "jason"],
-      "extensions": [".JASON"],
+      "extensions": [".jason"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
       "language": "jason",
-      "scopeName": "index.jason",
+      "scopeName": "source.jason",
       "path": "./syntaxes/jason.tmLanguage.json"
     }]
   }

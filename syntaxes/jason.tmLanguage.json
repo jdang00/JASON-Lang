@@ -2,31 +2,80 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "JASON",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+	  {
+		"include": "#jazzleberg"
+	  }
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.jason",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
+	  "jazzleberg": {
+		"begin": "<jazzleberg",
+		"end": "jazzleberg>",
+		"contentName": "entity.tag.jazzleberg",
+		"patterns": [
+		  {
+			"include": "#yeetson"
+		  }
+		]
+	  },
+	  "yeetson": {
+		"begin": "<yeetson",
+		"end": "yeetson>",
+		"patterns": [
+		  {
+			"include": "#key-value-pair"
+		  }
+		]
+	  },
+	  "key-value-pair": {
+		"patterns": [
+		  {
+			"include": "#keywords"
+		  },
+		  {
+			"include": "#strings"
+		  },
+		  {
+			"include": "#pipes"
+		  },
+		  {
+			"name": "entity.name.tag.jason",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_-]*\\b(?=\\s*[:])"
+		  },
+		  {
+			"name": "constant.numeric.jason",
+			"match": "(?<=:)\\s*\\d+"
+		  },
+		  {
+			"name": "entity.other.attribute-name.jason",
+			"match": "(?<=:)\\s*[^|\\n]+"
+		  }
+		]
+	  },
+	  "keywords": {
+		"patterns": [{
+		  "name": "keyword.control.jason",
+		  "match": "\\b(if|while|for|return)\\b"
+		}]
+	  },
+	  "strings": {
+		"patterns": [
+		  {
 			"name": "string.quoted.double.jason",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
-				{
-					"name": "constant.character.escape.jason",
-					"match": "\\\\."
-				}
+			  {
+				"name": "constant.character.escape.jason",
+				"match": "\\\\."
+			  }
 			]
-		}
+		  }
+		]
+	  },
+	  "pipes": { 
+		"name": "punctuation.separator.pipe.jason",
+		"match": "\\|"
+	  }
 	},
-	"scopeName": "index.jason"
+	"scopeName": "source.jason"
 }
